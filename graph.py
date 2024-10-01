@@ -7,7 +7,7 @@ def create_coauthorship_graph(file_path):
     
     with open(file_path, 'r') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)  # Skip header row if present
+        next(reader)
         for row in reader:
             author1, author2 = row[0], row[1]
             G.add_edge(author1, author2)
@@ -49,5 +49,5 @@ def visualize_graph(G):
 if __name__ == "__main__":
     file_path = "dataset/coauthorship.csv"
     G = create_coauthorship_graph(file_path)
-    analyze_network(G)
+    # analyze_network(G)
     visualize_graph(G)
